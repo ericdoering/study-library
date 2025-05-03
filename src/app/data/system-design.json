@@ -1,0 +1,52 @@
+[
+    {
+      "question_id": 1,
+      "question": "What is the CAP Theorem and what do Consistency, Availability, and Partition Tolerance mean?",
+      "answer": "CAP Theorem states that in any distributed data store, you can only achieve two out of the following three guarantees: Consistency, Availability, and Partition Tolerance. Consistency means that all nodes see the same data at the same time. Availability means every request receives a (non-error) response, without guaranteeing it contains the most recent data. Partition Tolerance means the system continues to operate despite arbitrary partitioning due to network failures. In practice, partition tolerance is a must, so systems typically have to choose between consistency and availability."
+    },
+    {
+      "question_id": 2,
+      "question": "How would you design a URL shortening service like bit.ly?",
+      "answer": "To design a URL shortening service, key components include a unique key generator (e.g., base62 encoding), a mapping storage (e.g., a key-value store like Redis or a database like PostgreSQL), and a redirect service. You must ensure uniqueness of shortened keys, handle high read traffic, enable analytics, and manage expiration and deletion. Caching popular redirects can reduce DB load, and partitioning the key space can improve scalability."
+    },
+    {
+      "question_id": 3,
+      "question": "Explain the difference between horizontal and vertical scaling.",
+      "answer": "Vertical scaling means increasing the capacity of a single machine (more CPU, RAM, etc.), whereas horizontal scaling means adding more machines or instances to distribute the load. Vertical scaling is simpler but limited by hardware constraints. Horizontal scaling is more complex but allows for greater fault tolerance and elasticity, especially in distributed systems or cloud environments."
+    },
+    {
+      "question_id": 4,
+      "question": "How do you design a highly available and fault-tolerant system?",
+      "answer": "Designing a highly available and fault-tolerant system involves using redundancy (multiple instances), load balancers, data replication, failover mechanisms, and stateless services. Key principles include avoiding single points of failure, using health checks and auto-scaling, and ensuring that components can recover gracefully. Data should be replicated across regions and zones, and services should degrade gracefully rather than fail completely."
+    },
+    {
+      "question_id": 5,
+      "question": "What is a message queue and why would you use one?",
+      "answer": "A message queue is a communication method used in distributed systems to decouple producers from consumers. It allows asynchronous processing, improves system resilience, and helps handle variable workloads. Use cases include task processing, order pipelines, and logging. Common technologies are RabbitMQ, Kafka, and AWS SQS. Message queues also help scale systems independently and isolate failures."
+    },
+    {
+      "question_id": 6,
+      "question": "How would you handle data consistency in a distributed microservices architecture?",
+      "answer": "In microservices, data consistency is often managed using eventual consistency, distributed transactions, or patterns like Saga. Since ACID transactions across services are hard to maintain, services should use unique IDs, publish domain events, and implement retry logic. Saga orchestrators or choreography patterns help maintain consistency via compensating actions when something fails mid-flow."
+    },
+    {
+      "question_id": 7,
+      "question": "How do caching strategies improve system performance, and what are some types of caches?",
+      "answer": "Caching stores frequently accessed data in fast storage (like memory) to reduce load on databases and speed up response times. Strategies include read-through, write-through, and write-behind caching. You can use in-memory caches (e.g., Redis, Memcached) or CDN caching for static assets. Caches can be local, distributed, or global, and cache invalidation is a key challenge."
+    },
+    {
+      "question_id": 8,
+      "question": "Design a system to store and serve millions of images efficiently.",
+      "answer": "Use object storage (like Amazon S3 or Google Cloud Storage) to store images. Each image should be assigned a unique identifier and organized using hashed directory structures. Use a CDN (Content Delivery Network) to cache and serve images near users. You may need metadata indexing in a database and a microservice API to handle uploads, resizing, and secure access (e.g., signed URLs)."
+    },
+    {
+      "question_id": 9,
+      "question": "How do you design a rate limiter for an API?",
+      "answer": "Rate limiting can be done using a token bucket or leaky bucket algorithm. Store the request counters per user or IP in a fast store like Redis with TTLs. Limit can be applied globally, per endpoint, or per user tier. Sliding window or fixed window strategies help with implementation. You should also return proper HTTP headers to inform clients of limits and retry times."
+    },
+    {
+      "question_id": 10,
+      "question": "What are eventual consistency and strong consistency? When would you prefer one over the other?",
+      "answer": "Strong consistency guarantees that once data is written, any subsequent read will return the most recent write. Eventual consistency allows for temporary discrepancies but ensures that all nodes will eventually have the same data. Strong consistency is needed for financial systems or transactions. Eventual consistency is preferred for high-availability and scalability in non-critical systems, like social feeds or analytics."
+    }
+  ]

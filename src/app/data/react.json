@@ -1,0 +1,53 @@
+[
+    {
+      "question_id": 1,
+      "question": "What are the benefits of using TypeScript with React?",
+      "answer": "TypeScript provides static type checking, which helps catch bugs at compile time. With React, it improves component readability, enables better IDE support and auto-completion, helps define clear prop types, and reduces runtime errors. It enforces good coding practices and makes large codebases more maintainable."
+    },
+    {
+      "question_id": 2,
+      "question": "How do you type props and state in a React component using TypeScript?",
+      "answer": "You can use TypeScript generics with `React.FC` or define a function component and explicitly type props. For example:\n\n```tsx\ninterface Props {\n  title: string;\n  count: number;\n}\nconst MyComponent: React.FC<Props> = ({ title, count }) => { ... }\n```\n\nState can be typed using `useState<Type>()`. Example:\n```tsx\nconst [items, setItems] = useState<string[]>([]);\n```"
+    },
+    {
+      "question_id": 3,
+      "question": "What is the difference between interface and type in TypeScript? Which should you use for React props?",
+      "answer": "`interface` and `type` can both define object shapes, but `interface` is generally preferred for defining React props due to its support for declaration merging and clearer intent. `type` is more flexible and can represent unions, primitives, or mapped types. Use `interface` for objects and `type` for more complex structures."
+    },
+    {
+      "question_id": 4,
+      "question": "How do you use React Context with TypeScript?",
+      "answer": "You define a context value type, then use `createContext<Type | undefined>(undefined)` and ensure type safety with `useContext`. Example:\n\n```tsx\ninterface ThemeContextType {\n  darkMode: boolean;\n  toggle: () => void;\n}\nconst ThemeContext = createContext<ThemeContextType | undefined>(undefined);\n```\nAlways check for undefined if you allow it, or provide a default value."
+    },
+    {
+      "question_id": 5,
+      "question": "What are some common mistakes developers make when using TypeScript with React?",
+      "answer": "Common mistakes include overusing `any`, not properly typing props or state, misunderstanding union/intersection types, and incorrectly typing refs or context. Another issue is poor use of generics in reusable components or missing null/undefined checks in strict mode."
+    },
+    {
+      "question_id": 6,
+      "question": "How would you type a React component that accepts children?",
+      "answer": "You can use the `React.PropsWithChildren<T>` utility or `children?: React.ReactNode` in the props interface.\n\nExample:\n```tsx\ninterface CardProps {\n  title: string;\n  children?: React.ReactNode;\n}\nconst Card: React.FC<CardProps> = ({ title, children }) => { ... }\n```"
+    },
+    {
+      "question_id": 7,
+      "question": "Explain how to type a custom hook in React using TypeScript.",
+      "answer": "Custom hooks are typed using TypeScript generics or inline return types. Example:\n\n```tsx\nfunction useToggle(initial: boolean = false): [boolean, () => void] {\n  const [state, setState] = useState(initial);\n  const toggle = () => setState(s => !s);\n  return [state, toggle];\n}\n```\nHere, the return type is explicitly `[boolean, () => void]`."
+    },
+    {
+      "question_id": 8,
+      "question": "How do you handle form inputs in React with TypeScript?",
+      "answer": "Use `useState` with typed values and access event values using proper types. Example:\n```tsx\nconst [email, setEmail] = useState<string>('');\nconst handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {\n  setEmail(e.target.value);\n};\n```\nUsing controlled components ensures type safety and easier validation."
+    },
+    {
+      "question_id": 9,
+      "question": "What is the benefit of using discriminated unions in TypeScript for React components?",
+      "answer": "Discriminated unions allow you to model components or props that have mutually exclusive variants. It improves type safety and prevents invalid prop combinations. It's especially useful in polymorphic components or form elements with different behaviors."
+    },
+    {
+      "question_id": 10,
+      "question": "How do you type asynchronous functions and API calls in React using TypeScript?",
+      "answer": "Use `async` functions that return `Promise<T>` and define response types explicitly. Example:\n```tsx\ninterface User {\n  id: number;\n  name: string;\n}\nconst fetchUser = async (): Promise<User> => {\n  const res = await fetch('/api/user');\n  return res.json();\n};\n```\nExplicit typing improves safety and auto-completion when consuming the data."
+    }
+  ]
+  

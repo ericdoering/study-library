@@ -1,0 +1,53 @@
+[
+    {
+      "question_id": 1,
+      "question": "What is the difference between supervised, unsupervised, and reinforcement learning?",
+      "answer": "Supervised learning uses labeled data to train models to predict outcomes (e.g., classification, regression). Unsupervised learning deals with unlabeled data and focuses on finding patterns or groupings (e.g., clustering, dimensionality reduction). Reinforcement learning involves an agent learning to make decisions by interacting with an environment to maximize cumulative reward."
+    },
+    {
+      "question_id": 2,
+      "question": "What is overfitting in machine learning and how can you prevent it?",
+      "answer": "Overfitting occurs when a model learns noise and details in the training data to the extent that it negatively impacts performance on new data. Prevention strategies include using simpler models, regularization (L1/L2), data augmentation, dropout in neural networks, and cross-validation to ensure generalization."
+    },
+    {
+      "question_id": 3,
+      "question": "What is a confusion matrix, and how is it used to evaluate classification models?",
+      "answer": "A confusion matrix is a table used to evaluate the performance of a classification algorithm. It shows the counts of true positives, false positives, true negatives, and false negatives. From it, you can derive metrics like accuracy, precision, recall, and F1-score to assess model performance."
+    },
+    {
+      "question_id": 4,
+      "question": "Explain the concept of gradient descent.",
+      "answer": "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of the steepest descent. It calculates the gradient of the loss with respect to the parameters and updates them using a learning rate until convergence or minimal loss is achieved."
+    },
+    {
+      "question_id": 5,
+      "question": "What is the bias-variance tradeoff?",
+      "answer": "The bias-variance tradeoff is the balance between a model's ability to generalize (variance) and its accuracy on the training set (bias). High bias leads to underfitting, while high variance leads to overfitting. The goal is to find a sweet spot where the model performs well on both training and unseen data."
+    },
+    {
+      "question_id": 6,
+      "question": "What are the differences between classification and regression?",
+      "answer": "Classification involves predicting discrete labels (e.g., spam vs. not spam), while regression predicts continuous values (e.g., house prices). Classification uses metrics like accuracy and F1-score, while regression uses metrics like mean squared error and R² score."
+    },
+    {
+      "question_id": 7,
+      "question": "What is cross-validation and why is it important?",
+      "answer": "Cross-validation is a technique for evaluating model performance by dividing the data into training and testing sets multiple times. The most common form is k-fold cross-validation. It helps ensure that the model generalizes well to unseen data and is not overfitting the training set."
+    },
+    {
+      "question_id": 8,
+      "question": "How does a decision tree algorithm work?",
+      "answer": "A decision tree splits the data based on feature values to create branches that lead to predictions. It uses criteria like Gini impurity or entropy to determine the best splits. The tree is built recursively until stopping conditions are met, such as maximum depth or minimum samples per leaf."
+    },
+    {
+      "question_id": 9,
+      "question": "What is regularization in machine learning?",
+      "answer": "Regularization is a technique used to reduce overfitting by adding a penalty term to the loss function. L1 regularization (Lasso) promotes sparsity by shrinking some coefficients to zero, while L2 regularization (Ridge) discourages large weights, promoting simpler models."
+    },
+    {
+      "question_id": 10,
+      "question": "What is the difference between bagging and boosting?",
+      "answer": "Bagging (Bootstrap Aggregating) trains multiple models independently on random subsets of data and averages their predictions to reduce variance. Boosting trains models sequentially, where each new model focuses on correcting the errors of the previous ones, improving accuracy and reducing bias."
+    }
+  ]
+  

@@ -1,0 +1,53 @@
+[
+    {
+      "question_id": 1,
+      "question": "What is the Django ORM and how does it work?",
+      "answer": "The Django ORM (Object-Relational Mapper) allows developers to interact with the database using Python classes instead of writing raw SQL. Each model class represents a table, and instances of the model correspond to rows. You can perform queries using methods like `.filter()`, `.get()`, `.all()`, and the ORM handles translating them into SQL under the hood."
+    },
+    {
+      "question_id": 2,
+      "question": "How do you define and apply migrations in Django?",
+      "answer": "Migrations in Django track changes to your models and apply them to the database schema. You define changes in your `models.py`, then run `python manage.py makemigrations` to create migration files, and `python manage.py migrate` to apply them. Django stores applied migrations in the `django_migrations` table for tracking."
+    },
+    {
+      "question_id": 3,
+      "question": "What are Django class-based views (CBVs) and when should you use them?",
+      "answer": "Class-based views allow you to build views as Python classes instead of functions, providing structure and reusability. They are useful when you need to reuse logic across views, or when you need built-in behaviors (e.g., `ListView`, `DetailView`, `CreateView`). CBVs can be extended and customized using mixins."
+    },
+    {
+      "question_id": 4,
+      "question": "How does Django handle form validation?",
+      "answer": "Django uses the `Form` and `ModelForm` classes to handle form rendering and validation. You define form fields in Python, and validation is handled by field validators and the `clean()` method. You can also define custom validation logic in `clean_<fieldname>()` methods or override the `clean()` method for cross-field validation."
+    },
+    {
+      "question_id": 5,
+      "question": "What is the difference between `@login_required` and `LoginRequiredMixin`?",
+      "answer": "`@login_required` is a decorator for function-based views that restricts access to authenticated users. `LoginRequiredMixin` is used with class-based views and must be placed before the view class in the inheritance order. Both ensure only authenticated users can access certain views."
+    },
+    {
+      "question_id": 6,
+      "question": "What are Django signals and how would you use them?",
+      "answer": "Django signals allow decoupled applications to get notified when certain events occur, such as saving a model. You can use signals like `pre_save`, `post_save`, and `post_delete` to trigger logic (e.g., sending a welcome email when a user registers). You connect a signal handler function to a signal using `@receiver` or `signal.connect()`."
+    },
+    {
+      "question_id": 7,
+      "question": "How do you manage static files and media files in Django?",
+      "answer": "Static files (CSS, JS, etc.) are managed with the `STATICFILES_DIRS` and `STATIC_ROOT` settings. Run `collectstatic` to gather them for deployment. Media files (user uploads) use `MEDIA_ROOT` and `MEDIA_URL`, and are typically handled using `FileField` or `ImageField`. In development, you use `django.views.static.serve` to serve them."
+    },
+    {
+      "question_id": 8,
+      "question": "How would you optimize a Django app for performance?",
+      "answer": "Performance optimization in Django includes database query optimization (using `.select_related()`, `.prefetch_related()`), adding indexes, caching with `memcached` or `Redis`, using the Django debug toolbar, reducing template rendering complexity, and applying pagination and rate limiting to views that return large datasets."
+    },
+    {
+      "question_id": 9,
+      "question": "What is middleware in Django and how is it used?",
+      "answer": "Middleware is a framework of hooks into Django’s request/response processing. Each middleware component is a class that can process a request before it reaches the view or process a response after the view has run. Common uses include authentication, logging, performance tracking, and modifying request/response objects."
+    },
+    {
+      "question_id": 10,
+      "question": "Explain Django's request/response lifecycle.",
+      "answer": "The lifecycle begins when a request hits Django. It passes through middleware, then URL routing maps it to a view. The view processes logic and returns an `HttpResponse`, which then goes back through middleware before reaching the client. Django templates and the ORM often play a role in generating this response."
+    }
+  ]
+  
