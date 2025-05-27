@@ -48,6 +48,56 @@
       "question_id": 10,
       "question": "What is the difference between bagging and boosting?",
       "answer": "Bagging (Bootstrap Aggregating) trains multiple models independently on random subsets of data and averages their predictions to reduce variance. Boosting trains models sequentially, where each new model focuses on correcting the errors of the previous ones, improving accuracy and reducing bias."
+    },
+    {
+      "question_id": 11,
+      "question": "What is the role of feature engineering in machine learning?",
+      "answer": "Feature engineering involves creating, selecting, or transforming variables to improve the performance of machine learning models. It can involve encoding categorical variables, scaling numerical data, creating interaction terms, or deriving new features that better represent the problem domain."
+    },
+    {
+      "question_id": 12,
+      "question": "What is the difference between a generative and a discriminative model?",
+      "answer": "Generative models learn the joint probability distribution of inputs and outputs (e.g., Naive Bayes, GANs), enabling them to generate new data. Discriminative models learn the conditional probability of the output given the input (e.g., logistic regression, SVM), and are typically used for classification."
+    },
+    {
+      "question_id": 13,
+      "question": "What are the main types of neural networks used in deep learning?",
+      "answer": "Common types of neural networks include feedforward neural networks (basic architecture), convolutional neural networks (CNNs) for image data, recurrent neural networks (RNNs) for sequential data, and transformers for advanced language and sequence modeling tasks."
+    },
+    {
+      "question_id": 14,
+      "question": "What is transfer learning and why is it useful?",
+      "answer": "Transfer learning is a technique where a model developed for one task is reused as the starting point for a model on a second task. It is useful when there is limited labeled data for the new task, and it leverages knowledge learned from large datasets to improve performance and reduce training time."
+    },
+    {
+      "question_id": 15,
+      "question": "What is the curse of dimensionality in machine learning?",
+      "answer": "The curse of dimensionality refers to the exponential increase in data sparsity and computational complexity as the number of features (dimensions) grows. It can lead to overfitting, slower learning, and degraded model performance. Dimensionality reduction techniques like PCA can help mitigate this."
+    },
+    {
+      "question_id": 16,
+      "question": "How do convolutional neural networks (CNNs) process image data?",
+      "answer": "CNNs process image data using convolutional layers that apply filters to capture spatial features like edges and textures. These are followed by pooling layers to reduce dimensionality and fully connected layers for classification. The local connectivity and shared weights make CNNs efficient for image tasks."
+    },
+    {
+      "question_id": 17,
+      "question": "What is an activation function, and why is it important in neural networks?",
+      "answer": "An activation function introduces non-linearity into the network, allowing it to learn complex patterns. Common activation functions include ReLU, sigmoid, and tanh. Without them, neural networks would behave like linear models, limiting their learning capacity."
+    },
+    {
+      "question_id": 18,
+      "question": "What is a support vector machine (SVM) and how does it work?",
+      "answer": "SVM is a supervised learning algorithm used for classification and regression. It finds the optimal hyperplane that maximizes the margin between classes. SVMs can handle non-linear data using kernel functions like polynomial or radial basis function (RBF) kernels."
+    },
+    {
+      "question_id": 19,
+      "question": "What is a ROC curve and what does it represent?",
+      "answer": "A ROC (Receiver Operating Characteristic) curve is a graphical representation of a classifier's performance across various threshold settings. It plots the true positive rate against the false positive rate. The area under the curve (AUC) indicates the model’s ability to distinguish between classes."
+    },
+    {
+      "question_id": 20,
+      "question": "What are the key steps in building a machine learning pipeline?",
+      "answer": "Key steps include data collection, preprocessing (cleaning, encoding, scaling), feature selection/engineering, model selection, training, validation using techniques like cross-validation, hyperparameter tuning, evaluation, and finally, deployment and monitoring in production."
     }
   ]
   

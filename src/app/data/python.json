@@ -48,6 +48,56 @@
       "question_id": 10,
       "question": "Explain Django's request/response lifecycle.",
       "answer": "The lifecycle begins when a request hits Django. It passes through middleware, then URL routing maps it to a view. The view processes logic and returns an `HttpResponse`, which then goes back through middleware before reaching the client. Django templates and the ORM often play a role in generating this response."
+    },
+    {
+      "question_id": 11,
+      "question": "What is the difference between a Django app and a Django project?",
+      "answer": "A Django project is the overall web application that includes configuration and settings for the entire site. A Django app is a modular component within the project that performs a specific function, like user authentication or blog management. Multiple apps can exist within a single project."
+    },
+    {
+      "question_id": 12,
+      "question": "How do you create a custom Django management command?",
+      "answer": "To create a custom command, add a `management/commands` directory inside a Django app. Then create a Python file (e.g., `mycommand.py`) with a `Command` class that inherits from `BaseCommand`. Implement the `handle()` method with your logic. Run it using `python manage.py mycommand`."
+    },
+    {
+      "question_id": 13,
+      "question": "What is the purpose of `__str__()` method in Django models?",
+      "answer": "The `__str__()` method in a Django model defines the string representation of an object. It's useful for displaying human-readable names in the admin interface and during debugging. It typically returns a meaningful field like the name or title of the model instance."
+    },
+    {
+      "question_id": 14,
+      "question": "How does Django's authentication system work?",
+      "answer": "Django’s authentication system handles user accounts, groups, permissions, and cookie-based sessions. It provides views for login, logout, and password management. You can customize the `User` model, use `authenticate()` and `login()` functions, and restrict views using decorators or mixins."
+    },
+    {
+      "question_id": 15,
+      "question": "What are context processors in Django templates?",
+      "answer": "Context processors are functions that inject variables into the context of every template. They are defined in `TEMPLATES['OPTIONS']['context_processors']` in settings. Examples include injecting the logged-in user, request object, or custom site-wide settings into all templates."
+    },
+    {
+      "question_id": 16,
+      "question": "How do you create a REST API using Django REST Framework?",
+      "answer": "To create a REST API, install Django REST Framework and define serializers to convert models to JSON. Create API views using `APIView`, `GenericAPIView`, or viewsets. Register routes using `DefaultRouter` and include them in your URLconf. DRF provides built-in support for authentication and pagination."
+    },
+    {
+      "question_id": 17,
+      "question": "What is the difference between `null=True` and `blank=True` in Django models?",
+      "answer": "`null=True` means the database can store a NULL value for the field, while `blank=True` means the field is allowed to be empty in forms. Use `null=True` for optional database fields, and `blank=True` to make form validation optional. They are often used together for optional fields."
+    },
+    {
+      "question_id": 18,
+      "question": "How do you implement custom validation in Django forms?",
+      "answer": "Custom validation in Django forms can be added using `clean_<fieldname>()` methods for individual fields or by overriding the `clean()` method for cross-field validation. You can raise `ValidationError` with custom messages when the input doesn't meet specified criteria."
+    },
+    {
+      "question_id": 19,
+      "question": "What is the difference between `reverse()` and `reverse_lazy()` in Django?",
+      "answer": "`reverse()` resolves URLs immediately and is typically used in views or functions. `reverse_lazy()` is a lazy version that delays URL resolution until it's needed, which is useful in settings or class-based views where the URL might not yet be loaded at the time of import."
+    },
+    {
+      "question_id": 20,
+      "question": "How can you handle file uploads in Django?",
+      "answer": "Django handles file uploads using `FileField` or `ImageField` in models. The uploaded files are stored in the directory specified by `MEDIA_ROOT`. Forms should use `enctype='multipart/form-data'`, and the file can be accessed via `request.FILES`. Files are saved automatically when using a `ModelForm`."
     }
   ]
   

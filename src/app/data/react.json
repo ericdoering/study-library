@@ -48,6 +48,56 @@
       "question_id": 10,
       "question": "How do you type asynchronous functions and API calls in React using TypeScript?",
       "answer": "Use `async` functions that return `Promise<T>` and define response types explicitly. Example:\n```tsx\ninterface User {\n  id: number;\n  name: string;\n}\nconst fetchUser = async (): Promise<User> => {\n  const res = await fetch('/api/user');\n  return res.json();\n};\n```\nExplicit typing improves safety and auto-completion when consuming the data."
+    },
+    {
+      "question_id": 11,
+      "question": "How can you type a useRef hook in TypeScript?",
+      "answer": "To type a `useRef` hook, pass the expected type to the generic. For example, for an input element: `const inputRef = useRef<HTMLInputElement>(null);`. This allows direct access to `inputRef.current` with correct type inference and auto-completion."
+    },
+    {
+      "question_id": 12,
+      "question": "What are generics and how are they used in React components with TypeScript?",
+      "answer": "Generics allow you to create reusable components with flexible types. For example:\n```tsx\ninterface ListProps<T> {\n  items: T[];\n  renderItem: (item: T) => React.ReactNode;\n}\nfunction List<T>({ items, renderItem }: ListProps<T>) {\n  return <>{items.map(renderItem)}</>;\n}\n```\nThis allows `List` to work with any data type."
+    },
+    {
+      "question_id": 13,
+      "question": "How do you type a reducer with useReducer in TypeScript?",
+      "answer": "You define types for state and actions, then use them in the reducer. Example:\n```tsx\ninterface State { count: number; }\ninterface Action { type: 'increment' | 'decrement'; }\nfunction reducer(state: State, action: Action): State { ... }\nconst [state, dispatch] = useReducer(reducer, { count: 0 });\n```"
+    },
+    {
+      "question_id": 14,
+      "question": "What is JSX.Element and how is it different from React.ReactNode?",
+      "answer": "`JSX.Element` is the return type of a JSX expression and represents a single React element. `React.ReactNode` is broader—it includes strings, numbers, fragments, arrays of elements, `null`, and more. Use `React.ReactNode` for props that can contain anything renderable."
+    },
+    {
+      "question_id": 15,
+      "question": "How do you ensure type safety when using enums in React props?",
+      "answer": "Define a TypeScript enum and use it in your prop type definition. Example:\n```tsx\nenum ButtonVariant { Primary = 'primary', Secondary = 'secondary' }\ninterface Props { variant: ButtonVariant; }\n```\nThis enforces the use of only valid enum values."
+    },
+    {
+      "question_id": 16,
+      "question": "How do you type defaultProps in a React component using TypeScript?",
+      "answer": "With functional components, default props are usually handled with default parameter values. Alternatively, define a partial type and merge it with props:\n```tsx\ninterface Props { size?: number; }\nconst MyComponent: React.FC<Props> = ({ size = 10 }) => { ... };\n```"
+    },
+    {
+      "question_id": 17,
+      "question": "How can you type event handlers for different HTML elements in React with TypeScript?",
+      "answer": "Use appropriate event types such as `React.ChangeEvent<HTMLInputElement>` for input changes or `React.MouseEvent<HTMLButtonElement>` for button clicks. This ensures accurate typing of event properties and target elements."
+    },
+    {
+      "question_id": 18,
+      "question": "How do you handle union types for component props in TypeScript?",
+      "answer": "You can define union types to model exclusive prop combinations. Example:\n```tsx\ntype Props = { type: 'link'; href: string } | { type: 'button'; onClick: () => void };\n```\nThis ensures only the correct set of props can be used together."
+    },
+    {
+      "question_id": 19,
+      "question": "What is a polymorphic component and how do you type it in React with TypeScript?",
+      "answer": "A polymorphic component can render different HTML elements or components based on an `as` prop. You can use generics and utility types to maintain correct prop types based on the element. Libraries like `@radix-ui/react-slot` or custom helpers are often used to simplify typing."
+    },
+    {
+      "question_id": 20,
+      "question": "How do you type a forwardRef component in React with TypeScript?",
+      "answer": "Use `forwardRef` with generics to type both props and the ref. Example:\n```tsx\nconst Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (\n  <input ref={ref} {...props} />\n));\n```\nThis enables type-safe usage of the ref in parent components."
     }
   ]
   

@@ -48,5 +48,55 @@
       "question_id": 10,
       "question": "What are eventual consistency and strong consistency? When would you prefer one over the other?",
       "answer": "Strong consistency guarantees that once data is written, any subsequent read will return the most recent write. Eventual consistency allows for temporary discrepancies but ensures that all nodes will eventually have the same data. Strong consistency is needed for financial systems or transactions. Eventual consistency is preferred for high-availability and scalability in non-critical systems, like social feeds or analytics."
+    },
+    {
+      "question_id": 11,
+      "question": "How would you design a scalable notification system?",
+      "answer": "A scalable notification system can use a message queue (e.g., Kafka, SQS) to handle event triggers. Worker services consume messages and send notifications via email, SMS, or push. Use templates and user preferences stored in a database. Notifications should be rate-limited, retried on failure, and logged. Scaling is achieved by horizontally scaling workers and decoupling producers from consumers."
+    },
+    {
+      "question_id": 12,
+      "question": "What is sharding and when would you use it?",
+      "answer": "Sharding is a database partitioning technique that splits data across multiple databases or servers based on a key (e.g., user ID). It improves write scalability and reduces the size of any single dataset. Sharding is useful when a single database can't handle the read/write load or storage capacity. However, it complicates queries, joins, and data migrations."
+    },
+    {
+      "question_id": 13,
+      "question": "How would you design a real-time chat application?",
+      "answer": "Use WebSockets or long-polling for real-time communication. A message broker (e.g., Redis Pub/Sub, Kafka) handles message delivery between users. Store chat history in a database and use a NoSQL store for scalability. Load balancers and sticky sessions ensure consistent connections. Use authentication tokens and encryption for security."
+    },
+    {
+      "question_id": 14,
+      "question": "What is a CDN and how does it improve performance?",
+      "answer": "A CDN (Content Delivery Network) is a distributed network of servers that cache and deliver static content like images, videos, and scripts from locations closer to users. This reduces latency, improves load times, and offloads traffic from the origin server. CDNs can also help with DDoS protection and traffic spikes."
+    },
+    {
+      "question_id": 15,
+      "question": "How would you design a system like Google Docs for real-time collaboration?",
+      "answer": "Use operational transformation or CRDTs (Conflict-free Replicated Data Types) for real-time edits. WebSockets handle bidirectional updates. A central server tracks versions and broadcasts changes. Document data can be stored in a NoSQL DB (e.g., MongoDB) with versioning. Access control, presence detection, and autosave are essential components."
+    },
+    {
+      "question_id": 16,
+      "question": "What are idempotent operations and why are they important in system design?",
+      "answer": "Idempotent operations produce the same result no matter how many times they are performed. This is important in APIs and distributed systems to avoid unintended side effects from retries or duplicated requests. For example, PUT and DELETE should be idempotent. Ensuring idempotency simplifies error handling and improves reliability."
+    },
+    {
+      "question_id": 17,
+      "question": "How would you design a metrics collection and monitoring system?",
+      "answer": "Use agents or services to collect metrics (CPU, memory, request latency) and send them to a time-series database (e.g., Prometheus, InfluxDB). Use a metrics exporter or sidecar. A visualization tool like Grafana provides dashboards. Alerting rules can be set to trigger notifications via email, Slack, or PagerDuty."
+    },
+    {
+      "question_id": 18,
+      "question": "What is database replication and how does it help in system design?",
+      "answer": "Database replication involves copying data from one database server (primary) to others (replicas). It enhances read scalability and fault tolerance. In case of a primary failure, replicas can take over. Replication can be synchronous (strong consistency) or asynchronous (eventual consistency), depending on latency and durability needs."
+    },
+    {
+      "question_id": 19,
+      "question": "How would you design a system to handle high write throughput?",
+      "answer": "Use a write-optimized storage engine (e.g., LSM-tree), batch writes, and asynchronous processing via queues. Sharding and partitioning help distribute load. Caching and write buffers can absorb spikes. Employing a log-based architecture (e.g., Kafka + consumers) decouples write ingestion from processing."
+    },
+    {
+      "question_id": 20,
+      "question": "What is a circuit breaker pattern and how does it improve system resilience?",
+      "answer": "The circuit breaker pattern detects failures and prevents the system from repeatedly trying operations likely to fail. It has three states: closed (normal), open (fail fast), and half-open (test if recovery is possible). This avoids cascading failures and helps services recover gracefully. It's commonly used in service-to-service communication."
     }
   ]

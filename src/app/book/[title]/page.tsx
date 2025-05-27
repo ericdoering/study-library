@@ -98,7 +98,7 @@ export default function BookPage({
               setHighlightAnswer(false);
               getRandomQuestion();
             }}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+            className="mt-4 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-500 transition"
           >
             Show Another Question
           </button>
@@ -107,7 +107,7 @@ export default function BookPage({
 
       <button
         onClick={() => router.push("/")}
-        className="px-4 py-2 bg-blue-600 text-white font-bold rounded hover:bg-blue-700 transition"
+        className="px-4 py-2 bg-gray-800 text-white font-bold rounded hover:bg-gray-500 transition"
       >
         Back to Home
       </button>
